@@ -11,7 +11,8 @@ app.on('ready', function() {
     show: false
   }) // appWindow
 
-  appWindow.loadURL('https://electron.atom.io')
+//appWindow.loadURL('https://electron.atom.io')
+  appWindow.loadURL('file://' + __dirname + '/index.html')
 
   infoWindow = new BrowserWindow({
     width: 400,
@@ -25,11 +26,13 @@ app.on('ready', function() {
 
   appWindow.once('ready-to-show', function() {
     appWindow.show()
+    /*
     // will show the popup after 1 second and hide it after 30 seconds
     setTimeout(function () {
       infoWindow.show()
       setTimeout(function () { infoWindow.hide() }, 30000);
     }, 1000);
+    */
   }) // ready-to-show
 
   // We need to pass event and its arguments as parameters to the function!
